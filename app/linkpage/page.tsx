@@ -29,7 +29,7 @@ return (
         <div className="items-center justify-center flex flex-col mt-40 space-y-2">
         <img
           className="border border-zinc-400 rounded-full w-34 h-34 object-cover animate-in fade-in zoom-in duration-1000 delay-100"
-          src="/picture/1.jpg"
+          src="./picture/1.jpg"
           alt="Profile Picture"/>
         <h1 className="text-4xl font-medium text-white animate-in fade-in duration-1000 delay-200">Nouzhee</h1>
         <p className="text-zinc-100 font-semibold text-center px-4">

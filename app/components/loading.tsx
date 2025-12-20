@@ -47,7 +47,7 @@ function LoadingPage(): React.ReactElement {
       aria-label="Loading"
     >
       <Image
-        src="/logos.svg"
+        src="./logos.svg"
         alt="Sonata"
         width={120}
         height={120}
