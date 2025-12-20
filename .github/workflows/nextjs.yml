@@ -7,7 +7,11 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
+<<<<<<< HEAD
     branches: ["beta"]
+=======
+    branches: ["master"]
+>>>>>>> dcd8fed8c43da548312c3b437370f00d6fe204e0
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
