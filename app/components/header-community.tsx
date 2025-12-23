@@ -302,7 +302,7 @@ export default function Header(): React.ReactElement {
                 <div className="flex items-center gap-3">
                     <Link href="/community" className="flex items-center gap-2">
                         <Image
-                            src="/logos.svg"
+                            src="./logos.svg"
                             alt="Nouzhee Logo"
                             width={66}
                             height={66}
