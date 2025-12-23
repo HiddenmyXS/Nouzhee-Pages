@@ -3,22 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-    Gamepad,
     Home,
     List,
-    Headset,
-    Pyramid,
     Server,
     Code,
     Container,
     Gamepad2,
     Menu,
     X,
+    Calendar,
 } from "lucide-react";
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { RiAccountCircle2Fill, RiAccountCircleFill, RiUserCommunityFill, RiUserCommunityLine } from "react-icons/ri";
+import { GrGallery } from "react-icons/gr";
+import { MdAccountCircle } from "react-icons/md";
+import { IoInformation } from "react-icons/io5";
 
-// HostProductsDropdown for desktop
 const HostProductsDropdown: React.FC<{ onLinkClick?: () => void }> = ({
     onLinkClick,
 }) => {
@@ -200,14 +201,14 @@ const MobileMenu: React.FC<{
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex"
                 >
-                    <div className="ml-auto w-80 bg-gray-900 shadow-lg h-full flex flex-col">
+                    <div className="ml-auto w-80 mb-5 bg-gray-900 shadow-lg h-screen flex flex-col rounded-xl">
                         <div className="flex items-center justify-between px-4 py-4 border-b border-white/10">
                             <Link href="/home" onClick={onClose} className="flex items-center gap-3">
                                 <Image
                                     src="./logos.svg"
                                     alt="Nouzhee Logo"
-                                    width={32}
-                                    height={32}
+                                    width={54}
+                                    height={54}
                                     priority
                                 />
                                 <span className="text-lg font-bold text-white">Nouzhee</span>
@@ -229,81 +230,57 @@ const MobileMenu: React.FC<{
                                 <Home className="w-5 h-5" />
                                 <span className="font-semibold">Home</span>
                             </Link>
-                            {/* Host Products as collapsible for mobile */}
-                            <details className="group">
-                                <summary className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2 cursor-pointer">
-                                    <List className="w-5 h-5" />
-                                    <span className="font-semibold">Host Products</span>
-                                    <svg
-                                        className="w-4 h-4 ml-auto group-open:rotate-180 transition-transform"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </summary>
-                                <div className="pl-6 mt-2 flex flex-col gap-2">
-                                    <Link
-                                        href="/game-host"
-                                        onClick={onClose}
-                                        className="flex items-center gap-2 text-gray-300 hover:text-gray-50 py-2"
-                                    >
-                                        <Gamepad2 className="w-5 h-5" />
-                                        Game Host
-                                    </Link>
-                                    <Link
-                                        href="/app-host"
-                                        onClick={onClose}
-                                        className="flex items-center gap-2 text-gray-300 hover:text-gray-50 py-2"
-                                    >
-                                        <Code className="w-5 h-5" />
-                                        App Host
-                                    </Link>
-                                    <Link
-                                        href="/private-node"
-                                        onClick={onClose}
-                                        className="flex items-center gap-2 text-gray-300 hover:text-gray-50 py-2"
-                                    >
-                                        <Server className="w-5 h-5" />
-                                        Private Node
-                                    </Link>
-                                    <Link
-                                        href="/vps"
-                                        onClick={onClose}
-                                        className="flex items-center gap-2 text-gray-300 hover:text-gray-50 py-2"
-                                    >
-                                        <Container className="w-5 h-5" />
-                                        VPS
-                                    </Link>
-                                </div>
-                            </details>
+
+                            <Link
+                                href="/community"
+                                onClick={onClose}
+                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                            >
+                                <RiUserCommunityFill className="w-5 h-5" />
+                                <span className="font-semibold">Community</span>
+                            </Link>
+
+                            <Link
+                                href="/events"
+                                onClick={onClose}
+                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                            >
+                                <Calendar className="w-5 h-5" />
+                                <span className="font-semibold">Event Calendar</span>
+                            </Link>
+
+                            <Link
+                                href="/gallery"
+                                onClick={onClose}
+                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                            >
+                                <GrGallery className="w-5 h-5" />
+                                <span className="font-semibold">Gallery</span>
+                            </Link>
+
                             <Link
                                 href="/linkpage"
                                 onClick={onClose}
                                 className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
                             >
-                                <Headset className="w-5 h-5" />
-                                <span className="font-semibold">LinkPage</span>
+                                <IoInformation className="w-5 h-5" />
+                                <span className="font-semibold">About Us</span>
                             </Link>
                             <div className="border-t border-white/10 my-2" />
                             <Link
-                                href="/game-panel"
+                                href="/login"
                                 onClick={onClose}
                                 className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors bg-white/10"
                             >
-                                <Gamepad className="w-5 h-5" />
+                                <RiAccountCircleFill className="w-5 h-5" />
                                 <span className="font-semibold">Login</span>
                             </Link>
                             <Link
-                                href="/client-area"
+                                href="/register"
                                 onClick={onClose}
                                 className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors bg-white/10"
                             >
-                                <Pyramid className="w-5 h-5" />
+                                <RiAccountCircle2Fill className="w-5 h-5" />
                                 <span className="font-semibold">Register</span>
                             </Link>
                         </nav>
@@ -347,21 +324,35 @@ export default function Header(): React.ReactElement {
                             <span className="font-semibold">Home</span>
                         </Link>
 
-                        <HostProductsDropdown />
-
                         <Link
                             href="/community"
                             className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <Headset className="w-4 h-4" aria-hidden="true" />
+                            <RiUserCommunityLine className="w-4 h-4" aria-hidden="true" />
                             <span className="font-semibold">Community</span>
+                        </Link>
+
+                        <Link
+                            href="/events"
+                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                        >
+                            <Calendar className="w-4 h-4" aria-hidden="true" />
+                            <span className="font-semibold">Event Calendar</span>
+                        </Link>
+
+                        <Link
+                            href="/gallery"
+                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                        >
+                            <GrGallery className="w-4 h-4" aria-hidden="true" />
+                            <span className="font-semibold">Gallery</span>
                         </Link>
 
                         <Link
                             href="/linkpage"
                             className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <Headset className="w-4 h-4" aria-hidden="true" />
+                            <IoInformation className="w-4 h-4" aria-hidden="true" />
                             <span className="font-semibold">About Us</span>
                         </Link>
                     </div>
@@ -378,7 +369,7 @@ export default function Header(): React.ReactElement {
                     >
                         <span className="absolute inset-0 bg-white/10 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100 rounded-lg" />
                         <span className="relative z-10 flex items-center gap-2">
-                            <Gamepad className="w-4 h-4" aria-hidden="true" />
+                            <MdAccountCircle className="w-6 h-6" aria-hidden="true" />
                             <span className="font-semibold">Login</span>
                         </span>
                     </Link>
@@ -390,7 +381,7 @@ export default function Header(): React.ReactElement {
                     >
                         <span className="absolute inset-0 bg-white/10 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100 rounded-lg" />
                         <span className="relative z-10 flex items-center gap-2">
-                            <Pyramid className="w-4 h-4" aria-hidden="true" />
+                            <RiAccountCircle2Fill className="w-6 h-6" aria-hidden="true" />
                             <span className="font-semibold">Register</span>
                         </span>
                     </Link>
