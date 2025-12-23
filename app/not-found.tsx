@@ -4,26 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { Home } from 'lucide-react';
 import Header from './components/header';
 
-// Blinking text animation component (Magic UI inspired)
-const BlinkingText = ({ children, className = "" }) => {
-  const [visible, setVisible] = useState(true);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(prev => !prev);
-    }, 500);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  return (
-    <span className={`transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-30'} ${className}`}>
-      {children}
-    </span>
-  );
-};
-
-// Aurora background effect component
 const Aurora = ({ colorStops = ["#3A29FF", "#FF94B4", "#FF3232"], blend = 0.5, amplitude = 1.0, speed = 0.5 }) => {
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -63,7 +43,6 @@ export default function NotFound() {
   return (
     <main className={`flex flex-col items-center justify-center bg-slate-900 w-full min-h-screen transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'} relative`}>
     <Header/>
-      {/* Aurora Background Effect */}
       <div className="w-full h-full absolute inset-0">
         <Aurora
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
@@ -73,28 +52,26 @@ export default function NotFound() {
         />
       </div>
 
-      {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
-        {/* 404 Error with Blinking Animation */}
         <div className="mb-8">
-          <BlinkingText className="text-8xl md:text-9xl font-black text-white tracking-tight">
+          <h1 className="text-8xl md:text-9xl font-black text-white tracking-tight">
             404
-          </BlinkingText>
+          </h1>
         </div>
-
-        {/* Error Message */}
-        <h1 className="text-2xl md:text-3xl font-bold text-white mb-6 max-w-2xl">
-          Tidak menemukan halaman yang anda cari
+        <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 max-w-2xl">
+          Not Found / Missing Page
         </h1>
-
-        {/* Call to Action Button */}
+        <p className='text-white font-semibold text-xl'>Ooops halaman yang anda cari tidak ditemukan.....</p>
         <a
           href="/"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+          role="button"
+          aria-label="View more details about The Fountaine Project Cosplay"
+          className="inline-flex items-center mt-5 px-4 py-2 gap-3 sm:px-6 sm:py-3 bg-transparent border-2 border-white text-white font-medium rounded-md transition-transform duration-200 transform hover:scale-105 hover:bg-white/10"
         >
-          <Home size={20} />
-          <span>Kembali ke halaman beranda</span>
+          <Home size={20}/>
+          <span>Back to home</span>
         </a>
+        
       </div>
     </main>
   );
