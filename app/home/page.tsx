@@ -60,63 +60,45 @@ return (
                     cursorCharacter="|" 
                   />
                   <p className="text-lg sm:text-xl text-white mb-8">
-                    A Junior Programmer with favorite hobbies cosplay and tech guy
+                    A Senior Programmer at Mobile Development with favorite hobbies cosplay and tech guy
                   </p>
-                  <div className="relative inline-flex items-center justify-center gap-4">
-                    <a>
-                      <GithubIcon
-                      className="text-white w-7 h-7"
-                    />
+                    <div className="relative inline-flex flex-wrap items-center justify-center gap-4">
+                    <a href="#" aria-label="GitHub" className="p-1">
+                      <Github className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <BsStackOverflow
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Stack Overflow" className="p-1">
+                      <BsStackOverflow className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <ImTux
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Tux" className="p-1">
+                      <ImTux className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <SiAndroidstudio
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Android Studio" className="p-1">
+                      <SiAndroidstudio className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <FaFlutter
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Flutter" className="p-1">
+                      <FaFlutter className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <TbBrandFirebase
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Firebase (brand)" className="p-1">
+                      <TbBrandFirebase className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <SiSqlite
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="SQLite" className="p-1">
+                      <SiSqlite className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <GrReactjs
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="React" className="p-1">
+                      <GrReactjs className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a>
-                      <SiLaravel
-                      className="text-white w-7 h-7"
-                    />
+                    <a href="#" aria-label="Laravel" className="p-1">
+                      <SiLaravel className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
-              </div>
+                    </div>
             </div>
           </div>
         </div>

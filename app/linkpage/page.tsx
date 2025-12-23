@@ -35,7 +35,7 @@ return (
         <p className="text-zinc-100 font-semibold text-center px-4">
           Seorang{" "}
           <Highlighter action="underline" color="#FF9800">
-          Junior Programmer
+          Senior Programmer
           </Highlighter>{" "}
           yang suka{" "}
           <Highlighter action="highlight" color="#5D84B0">
