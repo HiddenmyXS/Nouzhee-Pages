@@ -19,35 +19,35 @@ export default function HomeComponent() {
 
   const slides = [
     {
-      image: "/1.png",
+      image: "./1.png",
       description: "Description for image 1. Add your text here."
     },
     {
-      image: "/2.png",
+      image: "./2.png",
       description: "Description for image 2. Add your text here."
     },
     {
-      image: "/3.jpg",
+      image: "./3.jpg",
       description: "Description for image 3. Add your text here."
     },
     {
-      image: "/4.png",
+      image: "./4.png",
       description: "Description for image 4. Add your text here."
     },
     {
-      image: "/5.jpg",
+      image: "./5.jpg",
       description: "Description for image 5. Add your text here."
     },
     {
-      image: "/6.jpg",
+      image: "./6.jpg",
       description: "Description for image 6. Add your text here."
     },
     {
-      image: "/7.jpg",
+      image: "./7.jpg",
       description: "Description for image 7. Add your text here."
     },
     {
-      image: "/8.jpg",
+      image: "./8.jpg",
       description: "Description for image 8. Add your text here."
     }
   ];

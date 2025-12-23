@@ -35,7 +35,7 @@ return (
           <div className="w-full h-screen relative overflow-hidden">
             <div className="absolute inset-0">
               <img
-                src="/3.jpg"
+                src="./3.jpg"
                 alt="Portfolio preview"
                 className="w-full h-full object-cover"
               />

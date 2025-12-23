@@ -206,7 +206,7 @@ const MobileMenu: React.FC<{
                         <div className="flex items-center justify-between px-4 py-4 border-b border-white/10">
                             <Link href="/community" onClick={onClose} className="flex items-center gap-3">
                                 <Image
-                                    src="/logos.svg"
+                                    src="./logos.svg"
                                     alt="Nouzhee Logo"
                                     width={54}
                                     height={54}
@@ -312,7 +312,7 @@ export default function Header(): React.ReactElement {
 
                     <Link href="/community" className="flex items-center gap-2">
                         <Image
-                            src="/Genesis.png"
+                            src="./Genesis.png"
                             alt="Genesis Logo"
                             width={56}
                             height={56}

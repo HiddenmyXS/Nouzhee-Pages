@@ -36,7 +36,7 @@ export default function LoadingPage() {
     <LightRays />
       {/* Logo */}
       <Image
-      src="/logos.svg"
+      src="./logos.svg"
       alt="Genesis Logo"
       width={120}
       height={120}
