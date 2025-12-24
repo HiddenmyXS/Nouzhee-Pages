@@ -1,23 +1,19 @@
 "use client";
 
 import Header from "../components/header"
-import type { Metadata } from "next";
 import { useState, useEffect } from "react";
 import TextType from '@/components/TextType';
 import { Github, GithubIcon } from "lucide-react";
 import { BsStackOverflow } from "react-icons/bs";
 import { ImTux } from "react-icons/im";
 import { SiAndroidstudio, SiLaravel, SiSqlite } from "react-icons/si";
-import { DiFirebase } from "react-icons/di";
-import { TbBrandFirebase, TbBrandNextjs } from "react-icons/tb";
+import { TbBrandFirebase } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
 import { FaFlutter } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function HomeComponent() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);;
 
   useEffect(() => {
     const fadeInTimer = setTimeout(() => {
@@ -33,6 +29,7 @@ return (
       <Header />
         <link rel="icon" href="/logos.svg" sizes="any" />
           <div className="w-full h-screen relative overflow-hidden">
+             
             <div className="absolute inset-0">
               <img
                 src="./3.jpg"
@@ -63,39 +60,39 @@ return (
                     A Senior Programmer at Mobile Development with favorite hobbies cosplay and tech guy
                   </p>
                     <div className="relative inline-flex flex-wrap items-center justify-center gap-4">
-                    <a href="#" aria-label="GitHub" className="p-1">
+                    <a aria-label="GitHub" className="p-1">
                       <Github className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Stack Overflow" className="p-1">
+                    <a aria-label="Stack Overflow" className="p-1">
                       <BsStackOverflow className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Tux" className="p-1">
+                    <a aria-label="Tux" className="p-1">
                       <ImTux className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Android Studio" className="p-1">
+                    <a aria-label="Android Studio" className="p-1">
                       <SiAndroidstudio className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Flutter" className="p-1">
+                    <a aria-label="Flutter" className="p-1">
                       <FaFlutter className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Firebase (brand)" className="p-1">
+                    <a aria-label="Firebase (brand)" className="p-1">
                       <TbBrandFirebase className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="SQLite" className="p-1">
+                    <a aria-label="SQLite" className="p-1">
                       <SiSqlite className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="React" className="p-1">
+                    <a aria-label="React" className="p-1">
                       <GrReactjs className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
 
-                    <a href="#" aria-label="Laravel" className="p-1">
+                    <a aria-label="Laravel" className="p-1">
                       <SiLaravel className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
                     </div>

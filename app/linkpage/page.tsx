@@ -6,7 +6,6 @@ import { SiGithub, SiInstagram, SiStackoverflow, SiX, SiLinux, SiWhatsapp } from
 import Link from "next/link";
 import { LightRays } from "@/components/ui/light-rays";
 import { Highlighter } from "@/components/ui/highlighter"
-import { BubblesIcon, ChartBarIcon, CloudLightning, Code, Container, Gamepad, Gamepad2, GamepadIcon, LightbulbOff, LucideCloudLightning, MessageCircle, Server, ChevronLeft, ChevronRight, Shield, User2Icon, User } from "lucide-react";
 
 export default function LinktreeComponent() {
   const [isVisible, setIsVisible] = useState(false);
