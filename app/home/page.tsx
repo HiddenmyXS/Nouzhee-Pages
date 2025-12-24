@@ -3,6 +3,7 @@
 import Header from "../components/header"
 import type { Metadata } from "next";
 import { useState, useEffect } from "react";
+import TextType from '@/components/TextType';
 import { Github, GithubIcon } from "lucide-react";
 import { BsStackOverflow } from "react-icons/bs";
 import { ImTux } from "react-icons/im";
@@ -50,9 +51,14 @@ return (
             <div className="relative z-10 w-full h-full flex items-center">
               <div className="w-full max-w-7xl mx-auto px-8">
                 <div className="max-w-lg text-left">
-                  <h1 className="text-white">
-                    Hello! I`m Nouzhee, Programming and Cosplay Hobbies!
-                  </h1>
+                  <TextType
+                    className="text-5xl sm:text-6xl font-bold text-white mb-4"
+                    text={["Hello!", "I`m Nouzhee", "Favorite Hobbies Cosplay and Programming", "See Ya!"]}
+                    typingSpeed={95}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="|" 
+                  />
                   <p className="text-lg sm:text-xl text-white mb-8">
                     A Senior Programmer at Mobile Development with favorite hobbies cosplay and tech guy
                   </p>
