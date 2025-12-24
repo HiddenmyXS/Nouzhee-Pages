@@ -266,23 +266,6 @@ const MobileMenu: React.FC<{
                                 <IoInformation className="w-5 h-5" />
                                 <span className="font-semibold">About Us</span>
                             </Link>
-                            <div className="border-t border-white/10 my-2" />
-                            <Link
-                                href="/login"
-                                onClick={onClose}
-                                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors bg-white/10"
-                            >
-                                <RiAccountCircleFill className="w-5 h-5" />
-                                <span className="font-semibold">Login</span>
-                            </Link>
-                            <Link
-                                href="/register"
-                                onClick={onClose}
-                                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors bg-white/10"
-                            >
-                                <RiAccountCircle2Fill className="w-5 h-5" />
-                                <span className="font-semibold">Register</span>
-                            </Link>
                         </nav>
                     </div>
                 </motion.div>
@@ -312,80 +295,54 @@ export default function Header(): React.ReactElement {
 
                 {/* Desktop Navigation */}
                 <nav
-                    className="hidden md:flex items-center justify-end flex-1 gap-6"
+                    className="hidden md:flex items-center justify-end flex-1 gap-6 mr-8"
                     aria-label="Main navigation"
                 >
                     <div className="flex items-center gap-6">
                         <Link
                             href="/home"
-                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <Home className="w-4 h-4" aria-hidden="true" />
+                            <Home
+                                className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]"
+                                aria-hidden="true"
+                            />
                             <span className="font-semibold">Home</span>
                         </Link>
 
                         <Link
                             href="/community"
-                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <RiUserCommunityLine className="w-4 h-4" aria-hidden="true" />
+                            <RiUserCommunityLine className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
                             <span className="font-semibold">Community</span>
                         </Link>
 
                         <Link
                             href="/events"
-                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <Calendar className="w-4 h-4" aria-hidden="true" />
+                            <Calendar className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
                             <span className="font-semibold">Event Calendar</span>
                         </Link>
 
                         <Link
                             href="/gallery"
-                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <GrGallery className="w-4 h-4" aria-hidden="true" />
+                            <GrGallery className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
                             <span className="font-semibold">Gallery</span>
                         </Link>
 
                         <Link
                             href="/linkpage"
-                            className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
                         >
-                            <IoInformation className="w-4 h-4" aria-hidden="true" />
+                            <IoInformation className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
                             <span className="font-semibold">About Us</span>
                         </Link>
                     </div>
                 </nav>
-
-                {/* Desktop Action Buttons */}
-                <div className="hidden md:flex items-center gap-3">
-                    <div className="w-px h-8 bg-white/30" aria-hidden="true" />
-
-                    <Link
-                        href="/game-panel"
-                        className="relative group items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors overflow-hidden"
-                        aria-label="Open Game Panel"
-                    >
-                        <span className="absolute inset-0 bg-white/10 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100 rounded-lg" />
-                        <span className="relative z-10 flex items-center gap-2">
-                            <MdAccountCircle className="w-6 h-6" aria-hidden="true" />
-                            <span className="font-semibold">Login</span>
-                        </span>
-                    </Link>
-
-                    <Link
-                        href="/client-area"
-                        className="relative group items-center gap-2 px-3 py-2 rounded-lg text-sm text-white transition-colors overflow-hidden"
-                        aria-label="Open Client Area"
-                    >
-                        <span className="absolute inset-0 bg-white/10 transform scale-x-0 origin-left transition-transform duration-200 ease-out group-hover:scale-x-100 rounded-lg" />
-                        <span className="relative z-10 flex items-center gap-2">
-                            <RiAccountCircle2Fill className="w-6 h-6" aria-hidden="true" />
-                            <span className="font-semibold">Register</span>
-                        </span>
-                    </Link>
-                </div>
 
                 {/* Mobile Hamburger */}
                 <button
