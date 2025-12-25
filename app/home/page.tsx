@@ -3,14 +3,13 @@
 import Header from "../components/header"
 import { useState, useEffect } from "react";
 import TextType from '@/components/TextType';
-import { Github, GithubIcon } from "lucide-react";
+import { Github } from "lucide-react";
 import { BsStackOverflow } from "react-icons/bs";
 import { ImTux } from "react-icons/im";
 import { SiAndroidstudio, SiLaravel, SiSqlite } from "react-icons/si";
 import { TbBrandFirebase } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
 import { FaFlutter } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function HomeComponent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -95,10 +94,10 @@ return (
                     <a aria-label="Laravel" className="p-1">
                       <SiLaravel className="text-white w-6 h-6 sm:w-7 sm:h-7" />
                     </a>
-                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       </div>
     </main>
   );
