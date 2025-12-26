@@ -76,7 +76,6 @@ export default function HomeComponent() {
           { image: slides[1].image, title: "First Meetup", desc: slides[1].description, date: "January 2024", icon: "👥", color: "bg-purple-600" },
           { image: slides[2].image, title: "Convention", desc: slides[2].description, date: "April 2024", icon: "🎪", color: "bg-pink-600" },
           { image: slides[3].image, title: "Gallery Showcase", desc: slides[3].description, date: "August 2024", icon: "⭐", color: "bg-yellow-600" },
-          { image: slides[4].image, title: "Gallery Showcase", desc: slides[4].description, date: "December 2024", icon: "⭐", color: "bg-yellow-600" }
         ].map((item, idx) => {
           const isLeft = idx % 2 === 0;
           return (
