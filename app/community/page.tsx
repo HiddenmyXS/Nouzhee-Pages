@@ -23,7 +23,7 @@ export default function CommunityComponent() {
       description: "Description for image 1."
     },
     {
-      image: "./picture/picture-2.jpg",
+      image: "./picture/picture-2.JPG",
       description: "Description for image 2."
     },
     {
@@ -43,7 +43,7 @@ export default function CommunityComponent() {
       description: "Description for image 6."
     },
     {
-      image: "./picture/picture-7.jpg",
+      image: "./picture/picture-7.JPG",
       description: "Description for image 7."
     },
     {
@@ -83,7 +83,7 @@ export default function CommunityComponent() {
               className={`transition-opacity duration-500 ease-in-out object-cover ${
               loaded ? "opacity-100" : "opacity-0"
               }`}
-              onLoadingComplete={() => setLoaded(true)}
+              onLoad={() => setLoaded(true)}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
               <div className="p-6 sm:p-12 md:p-28 max-w-full w-full sm:w-3/4 md:w-1/2 text-center sm:text-left">

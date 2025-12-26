@@ -20,15 +20,15 @@ export default function HomeComponent() {
 
   const slides = [
     {
-      image: "/picture/picture-1.jpg",
-      description: "Description for image 1. Add your text here."
+      image: "./picture/picture-1.jpg",
+      description: "Di mulai awal cosplayku pada tahun 2023. adalah momen yang tak terlupakan ketika aku mengenakan kostum pertamaku dan merasakan kegembiraan menjadi karakter favoritku. Perjalanan ini baru saja dimulai, dan aku sangat bersemangat untuk menjelajahi dunia cosplay lebih dalam lagi. Aku menjadi Wanderer alias Scaramouche dari game Genshin Impact yang sangat aku sukai. dari sinilah aku memulai perjalananku di dunia cosplay. mendapatkan banyak pengalaman berharga dan bertemu dengan banyak teman baru yang memiliki minat yang sama."
     },
     {
-      image: "/picture/picture-2.jpg",
+      image: "./picture/picture-2.jpg",
       description: "Description for image 2. Add your text here."
     },
     {
-      image: "/picture/picture-3.jpg",
+      image: "./picture/picture-3.jpg",
       description: "Description for image 3. Add your text here."
     },
     {
@@ -68,7 +68,7 @@ export default function HomeComponent() {
       <Header/>
       <div className="relative w-full h-66 flex items-center justify-center">
         <Image
-          src="/nav-community.jpg"
+          src="./nav-community.jpg"
           alt="Community background"
           fill
           className="object-cover"
@@ -88,10 +88,11 @@ export default function HomeComponent() {
           <div className="relative w-full max-w-5xl px-4">
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2" />
         {[
-          { image: slides[0].image, title: "Cosplay Start", desc: slides[0].description, date: "Mar 2023", icon: "🎨", color: "bg-blue-600" },
-          { image: slides[1].image, title: "First Meetup", desc: slides[1].description, date: "Jun 2023", icon: "👥", color: "bg-purple-600" },
-          { image: slides[2].image, title: "Convention", desc: slides[2].description, date: "Oct 2023", icon: "🎪", color: "bg-pink-600" },
-          { image: slides[3].image, title: "Gallery Showcase", desc: slides[3].description, date: "Feb 2024", icon: "⭐", color: "bg-yellow-600" }
+          { image: slides[0].image, title: "Cosplay Start", desc: slides[0].description, date: "November 2023", icon: "🎨", color: "bg-blue-600" },
+          { image: slides[1].image, title: "First Meetup", desc: slides[1].description, date: "January 2024", icon: "👥", color: "bg-purple-600" },
+          { image: slides[2].image, title: "Convention", desc: slides[2].description, date: "April 2024", icon: "🎪", color: "bg-pink-600" },
+          { image: slides[3].image, title: "Gallery Showcase", desc: slides[3].description, date: "August 2024", icon: "⭐", color: "bg-yellow-600" },
+          { image: slides[4].image, title: "Gallery Showcase", desc: slides[4].description, date: "December 2024", icon: "⭐", color: "bg-yellow-600" }
         ].map((item, idx) => {
           const isLeft = idx % 2 === 0;
           return (
