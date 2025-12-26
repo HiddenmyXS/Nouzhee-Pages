@@ -63,7 +63,6 @@ export default function NotFound() {
       <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
         <div className="mb-8">
           <FuzzyText
-            className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-9xl font-black text-white opacity-20 pointer-events-none select-none"
             baseIntensity={0.2} 
             hoverIntensity={0.23} 
             enableHover={true}
