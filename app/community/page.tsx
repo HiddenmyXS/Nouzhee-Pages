@@ -20,35 +20,35 @@ export default function CommunityComponent() {
   const slides = [
     {
       image: "./picture/picture-1.jpg",
-      description: "Description for image 1. Add your text here."
+      description: "Description for image 1."
     },
     {
       image: "./picture/picture-2.jpg",
-      description: "Description for image 2. Add your text here."
+      description: "Description for image 2."
     },
     {
       image: "./picture/picture-3.jpg",
-      description: "Description for image 3. Add your text here."
+      description: "Description for image 3."
     },
     {
       image: "./picture/picture-4.jpg",
-      description: "Description for image 4. Add your text here."
+      description: "Description for image 4."
     },
     {
       image: "./picture/picture-5.png",
-      description: "Description for image 5. Add your text here."
+      description: "Description for image 5."
     },
     {
       image: "./picture/picture-6.png",
-      description: "Description for image 6. Add your text here."
+      description: "Description for image 6."
     },
     {
       image: "./picture/picture-7.jpg",
-      description: "Description for image 7. Add your text here."
+      description: "Description for image 7."
     },
     {
       image: "./picture/picture-8.jpg",
-      description: "Description for image 8. Add your text here."
+      description: "Description for image 8."
     }
   ];
 
