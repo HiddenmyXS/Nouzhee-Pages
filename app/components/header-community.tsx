@@ -112,8 +112,17 @@ export default function Header(): React.ReactElement {
                 <div className="flex items-center gap-3">
                     <Link href="/home" className="flex items-center gap-2">
                         <Image
-                            src="./logos.svg"
+                            src="/logos.svg"
                             alt="Nouzhee Logo"
+                            width={66}
+                            height={66}
+                            priority
+                        />
+                    </Link>
+                     <Link href="/home" className="flex items-center gap-2">
+                        <Image
+                            src="/Genesis.png"
+                            alt="NewGenesis Logo"
                             width={66}
                             height={66}
                             priority

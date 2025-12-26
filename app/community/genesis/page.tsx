@@ -5,7 +5,7 @@ import HeaderCommunity from "@/app/components/header-community";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { useState, useEffect } from "react";
 
-export default function HomeComponent() {
+export default function GenesisComponent() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 

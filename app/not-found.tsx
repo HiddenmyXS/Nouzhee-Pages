@@ -1,28 +1,36 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import FuzzyText from '@/components/FuzzyText';
 import { Home } from 'lucide-react';
 import Header from './components/header';
 
-const Aurora = ({ colorStops = ["#3A29FF", "#FF94B4", "#FF3232"], blend = 0.5, amplitude = 1.0, speed = 0.5 }) => {
+const Aurora = ({ colorStops = ["#24102F", "#4B1E6A", "#8C5CFF"], blend = 0.6, amplitude = 1.0, speed = 1.0 }) => {
+  const [c1, c2, c3] = colorStops;
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-50"
-        style={{
-          background: `radial-gradient(ellipse at 50% 50%, ${colorStops[0]}, transparent 50%), 
-                       radial-gradient(ellipse at 80% 10%, ${colorStops[1]}, transparent 50%),
-                       radial-gradient(ellipse at 20% 80%, ${colorStops[2]}, transparent 50%)`,
-          filter: 'blur(60px)',
-          animation: 'aurora 20s ease-in-out infinite',
-        }}
-      />
+      <div className="aurora-layer" />
       <style jsx>{`
+        .aurora-layer {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background:
+            radial-gradient(ellipse at 40% 30%, ${c1} 0%, transparent 40%),
+            radial-gradient(ellipse at 75% 10%, ${c2} 0%, transparent 45%),
+            radial-gradient(ellipse at 20% 80%, ${c3} 0%, transparent 45%);
+          background-blend-mode: screen;
+          opacity: ${blend};
+          filter: blur(${60 * amplitude}px);
+          transform-origin: center;
+          animation: aurora ${20 / Math.max(speed, 0.001)}s ease-in-out infinite;
+        }
+
         @keyframes aurora {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(10%, 5%) scale(1.1); }
-          50% { transform: translate(-5%, 10%) scale(0.9); }
-          75% { transform: translate(5%, -5%) scale(1.05); }
+          25% { transform: translate(${10 * amplitude}%, ${5 * amplitude}%) scale(${1 + 0.1 * amplitude}); }
+          50% { transform: translate(${-5 * amplitude}%, ${10 * amplitude}%) scale(${1 - 0.1 * amplitude}); }
+          75% { transform: translate(${5 * amplitude}%, ${-5 * amplitude}%) scale(${1 + 0.05 * amplitude}); }
         }
       `}</style>
     </div>
@@ -54,9 +62,12 @@ export default function NotFound() {
 
       <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
         <div className="mb-8">
-          <h1 className="text-8xl md:text-9xl font-black text-white tracking-tight">
-            404
-          </h1>
+          <FuzzyText
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-9xl font-black text-white opacity-20 pointer-events-none select-none"
+            baseIntensity={0.2} 
+            hoverIntensity={0.23} 
+            enableHover={true}
+          >404</FuzzyText>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 max-w-2xl">
           Not Found / Missing Page
