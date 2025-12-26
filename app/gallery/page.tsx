@@ -20,15 +20,15 @@ export default function HomeComponent() {
 
   const slides = [
     {
-      image: "./gallery/gallery-1.JPG",
+      image: "./galleries/gallery-1.JPG",
       description: "Di mulai awal cosplayku pada tahun 2023. adalah momen yang tak terlupakan ketika aku mengenakan kostum pertamaku dan merasakan kegembiraan menjadi karakter favoritku. Perjalanan ini baru saja dimulai, dan aku sangat bersemangat untuk menjelajahi dunia cosplay lebih dalam lagi. Aku menjadi Wanderer alias Scaramouche dari game Genshin Impact yang sangat aku sukai. dari sinilah aku memulai perjalananku di dunia cosplay. mendapatkan banyak pengalaman berharga dan bertemu dengan banyak teman baru yang memiliki minat yang sama."
     },
     {
-      image: "./gallery/gallery-2.jpg",
+      image: "./galleries/gallery-2.jpg",
       description: "Description for image 2. Add your text here."
     },
     {
-      image: "./gallery/gallery-3.jpg",
+      image: "./galleries/gallery-3.jpg",
       description: "Description for image 3. Add your text here."
     },
     {
