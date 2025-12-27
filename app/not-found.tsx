@@ -50,6 +50,7 @@ export default function NotFound() {
 
   return (
     <main className={`flex flex-col items-center justify-center bg-slate-900 w-full min-h-screen transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'} relative`}>
+    <link rel="icon" href="/logos.svg" sizes="any" />
     <Header/>
       <div className="w-full h-full absolute inset-0">
         <Aurora
