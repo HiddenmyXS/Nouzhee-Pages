@@ -33,7 +33,7 @@ export default function HomeComponent() {
     },
     {
       image: "./picture/picture.jpg",
-      description: "Description for image 4. Add your text here."
+      description: "Description for image 4."
     }
   ];
 
