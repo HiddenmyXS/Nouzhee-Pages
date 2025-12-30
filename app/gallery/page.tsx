@@ -29,7 +29,7 @@ export default function HomeComponent() {
     },
     {
       image: "./galleries/gallery-3.jpg",
-      description: "Description for image 3. Add your text here."
+      description: "Description for image 3."
     },
     {
       image: "./picture/picture.jpg",
