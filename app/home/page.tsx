@@ -31,7 +31,7 @@ return (
              
             <div className="absolute inset-0">
               <img
-                src="./picture/picture-1.jpg"
+                src="./picture/master.jpg"
                 alt="Portfolio preview"
                 className="w-full h-full object-cover"
               />
