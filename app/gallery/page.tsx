@@ -25,15 +25,15 @@ export default function HomeComponent() {
     },
     {
       image: "./galleries/gallery-2.jpg",
-      description: "Description for image 2. Add your text here."
+      description: "Pertama kali terjun dalam dunia cosplay cukup excited. Aku mengajak teman temanku untuk ikut kesana untuk meramaikan acara tersebut. Pada saat datang aku masih cukup bingung dan kurang begitu paham, apalagi aku baru pertama kali terjun ke dalam dunia cosplay yang begitu luas. disini aku mulai belajar, mencari pengalaman baru dan mencari teman baru yang memiliki pengalaman yang jauh lebih tinggi dibandingkan aku. disinilah aku bertemu pertama kali dengan teman yang positive vibes dan saling support bersama. hingga aku selalu hadir di event bersama teman teman sirkel ku."
     },
     {
-      image: "./galleries/gallery-3.jpg",
-      description: "Description for image 3."
+      image: "./picture/master.jpg",
+      description: "Lagi malas ketik, nanti di update kok :)"
     },
     {
       image: "./picture/picture.jpg",
-      description: "Description for image 4."
+      description: "nanti di update :)"
     }
   ];
 
