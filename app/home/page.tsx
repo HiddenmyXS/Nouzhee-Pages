@@ -109,7 +109,12 @@ export default function HomeComponent() {
   );
 }
 
-function IconMini({ icon, color = "text-white" }) {
+type IconMiniProps = {
+    icon: React.ReactNode;
+    color?: string;
+};
+
+function IconMini({ icon, color = "text-white" }: IconMiniProps) {
     return (
         <div className={`w-5 h-5 sm:w-6 sm:h-6 ${color} opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 flex items-center justify-center`}>
             {icon}
