@@ -11,19 +11,6 @@ const zector = localFont({
   display: "swap", // Penting agar teks muncul dulu sebelum font loading selesai
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://nouzhee.my.id"), 
-  
-  title: {
-    default: "Nouzhee — Portfolio Systems",
-    template: "%s | Nouzhee",
-  },
-  description: "Hosting server game anti-lag, murah, dan stabil. Deploy Minecraft, FiveM, dan Node.js dalam hitungan detik. Garansi uptime 99.9% dengan proteksi DDoS bawaan.",
-  
-  authors: [{ name: "HiddenmyXS", url: "https://nouzhee.my.id" }],
-  
-};
-
 export const viewport: Viewport = {
   themeColor: "#0ea5e9",
   width: "device-width",
@@ -41,7 +28,7 @@ export default function RootLayout({
       <body
         className={cn(
           zector.className,
-          "bg-gray-950 text-white antialiased min-h-screen flex flex-col selection:bg-sky-500/30 selection:text-sky-200"
+          "bg-gray-950 text-white antialiased min-h-screen flex flex-col selection:text-sky-200"
         )}
       >
         <Navbar />

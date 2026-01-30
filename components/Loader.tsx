@@ -10,7 +10,7 @@ const Loader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 3000); // Sedikit lebih lama untuk menikmati animasinya
+    }, 3500); // Sedikit lebih lama untuk menikmati animasinya
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,7 +19,7 @@ const Loader = () => {
       {isVisible && (
         <motion.div
           style={{ willChange: "opacity" }}
-          className="fixed inset-0 flex items-center justify-center bg-[#050505] z-9999 overflow-hidden touch-none"
+          className="fixed inset-0 flex items-center justify-center bg-[#050505] z-[9999] overflow-hidden touch-none"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
@@ -42,9 +42,9 @@ const Loader = () => {
           {/* --- 2. MECHA DECORATIVE ELEMENTS --- */}
           {/* Unit Number 08 */}
           <div className="absolute top-10 left-10 flex flex-col gap-1 opacity-40">
-            <span className="text-6xl font-black italic text-white/20 tracking-tighter">08</span>
+            <span className="text-6xl font-black text-white/20 tracking-tighter">#8625</span>
             <div className="h-[2px] w-full bg-cyan-500 animate-pulse" />
-            <span className="text-[10px] font-mono text-cyan-400 tracking-[0.4em]">UNIT_ACTIVATION</span>
+            <span className="text-[10px] font-mono text-gray-300 tracking-[0.4em]">UNIT_ACTIVATION</span>
           </div>
 
           {/* Corner Brackets */}

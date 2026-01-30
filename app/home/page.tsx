@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import ClientWrapping from "@/components/ClientWrapping";
 import TextType from '@/components/TextType';
-import { Github } from "lucide-react";
+import { Github, Copy, Check } from "lucide-react";
 import { BsStackOverflow } from "react-icons/bs";
 import { ImTux } from "react-icons/im";
-import { SiAndroidstudio, SiLaravel, SiSqlite } from "react-icons/si";
+import { SiAndroidstudio, SiAsus, SiCodeblocks, SiIntel, SiIntellijidea, SiJetbrains, SiLaravel, SiMsi, SiReplit, SiServerfault, SiSnapdragon, SiSqlite, SiVsco, SiVscodium } from "react-icons/si";
 import { TbBrandFirebase } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
 import { FaFlutter } from "react-icons/fa6";
@@ -14,13 +14,22 @@ import { FaFlutter } from "react-icons/fa6";
 export default function HomeComponent() {
   const [isVisible, setIsVisible] = useState(false);
 
+  const [copied, setCopied] = useState(false);
+  const websiteUrl = "https://nouzhee.my.id";
+
+  const handleCopy = () => {
+  navigator.clipboard.writeText(websiteUrl);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2000);
+};
+
   useEffect(() => {
     const fadeInTimer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(fadeInTimer);
   }, []);
 
   return (
-    <main className={`relative w-full h-screen overflow-hidden bg-[#0a0a0a] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <main className={`relative w-full h-screen overflow-hidden`}>
       <ClientWrapping>
       <style jsx>{`
         .bg-grain {
@@ -95,8 +104,92 @@ export default function HomeComponent() {
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-cyan-500/50"/>
                   </div>
                 </div>
+
+                <div className="relative group max-w-[440px] top-5 font-mono"> 
+                  {/* Layer 1: Shadow Box (Tetap ada untuk kedalaman) */}
+                  <div className="absolute inset-0 border border-white/5 bg-black/40 translate-x-3 translate-y-3 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />               
+                  {/* Layer 2: Hard-Terminal Container */}
+                  <div className="relative bg-[#020202] border border-cyan-500/30 p-0 backdrop-blur-md shadow-2xl border-s-4 border-s-cyan-500/50 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1 overflow-hidden">
+                    {/* Terminal Title Bar (Black Solid) */}
+                    <div className="bg-cyan-500/10 border-b border-cyan-500/20 px-4 py-2 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="flex gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-cyan-500/20 border border-cyan-500/50" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-cyan-500/20 border border-cyan-500/50" />
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-500 font-bold">
+                          root@nouzhee:~
+                        </span>
+                      </div>
+                      
+                      {/* Action Copy */}
+                      <button 
+                        onClick={handleCopy}
+                        className="text-cyan-500/50 hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                      >
+                        {copied ? (
+                          <Check size={12} className="text-green-400" />
+                        ) : (
+                          <Copy size={12} />
+                        )}
+                        <span className="text-[9px] uppercase font-bold">{copied ? 'Done' : 'Copy'}</span>
+                      </button>
+                    </div>
+
+                    {/* Terminal Body */}
+                    <div className="p-6 space-y-4 relative bg-white/[0.03]">
+                      {/* Scanline Effect Overlay */}
+                      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] z-10 bg-[length:100%_4px,3px_100%]" />
+
+                      {/* Lines of Code */}
+                      <div className="relative z-0 space-y-1 text-sm">
+                        <div className="flex gap-2">
+                          <span className="text-cyan-500/50 underline">visitor</span>
+                          <span className="text-white/40">@</span>
+                          <span className="text-cyan-500">terminal:</span>
+                          <span className="text-white/40">~$</span>
+                          <span className="text-white">fetch --website-link</span>
+                        </div>
+                        
+                        <div className="py-2 px-3 bg-cyan-500/5 border-l border-cyan-500/30 text-cyan-400/90 italic text-xs break-all">
+                          {websiteUrl}
+                        </div>
+
+                        <div className="flex gap-2 pt-2">
+                          <span className="text-cyan-500/50 underline">visitor</span>
+                          <span className="text-white/40">@</span>
+                          <span className="text-cyan-500">terminal:</span>
+                          <span className="text-white/40">~$</span>
+                          <span className="text-white animate-pulse">_</span>
+                        </div>
+                      </div>
+
+                      {/* Skills Sub-Section (Mini Icons) */}
+                      <div className="pt-4 border-t border-cyan-500/10">
+                        <div className="flex items-center gap-2 mb-4">
+                          <div className="w-1 h-1 bg-cyan-500" />
+                          <span className="text-[9px] uppercase tracking-widest text-cyan-500/60 font-bold">Loaded_Modules</span>
+                        </div>
+                        <div className="grid grid-cols-5 gap-4 grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
+                          <IconMini icon={<SiCodeblocks />}/>
+                          <IconMini icon={<SiReplit />}/>
+                          <IconMini icon={<SiVscodium />}/>
+                          <IconMini icon={<SiJetbrains />}/>
+                          <IconMini icon={<SiIntellijidea />}/>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Decorative Tag */}
+                    <div className="absolute bottom-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-2 py-0.5 tracking-tighter uppercase italic translate-y-0 group-hover:-translate-y-1 transition-transform">
+                      Unit_86_Online
+                    </div>
+                  </div>
+                </div>          
             </div>
         </div>
+
+        
         <div className="hidden lg:flex lg:w-[58%] h-full items-end justify-end p-12 pointer-events-none">
             <div className="text-white/10 text-9xl font-black select-none rotate-90 translate-x-20">
                // NOUZHEE

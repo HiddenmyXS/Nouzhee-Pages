@@ -102,7 +102,7 @@ export default function NotFound() {
       </div>
 
       {/* FOOTER - Minimalist Status */}
-      <div className={`absolute bottom-8 text-[10px] font-mono text-gray-600 tracking-widest uppercase transition-all duration-75 delay-[800ms] ${isBooted ? 'opacity-50' : 'opacity-0'}`}>
+      <div className={`absolute bottom-8 text-[12px] font-mono text-gray-300 tracking-widest uppercase transition-all duration-75 delay-[800ms] ${isBooted ? 'opacity-50' : 'opacity-0'}`}>
         Status: 404 // Nouzhee_System_Core
       </div>
 

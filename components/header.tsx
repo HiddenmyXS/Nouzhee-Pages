@@ -106,7 +106,7 @@ export default function Header(): React.ReactElement {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-2 pt-2">
+        <header className="fixed top-0 left-0 z-40 right-0 flex items-center justify-center px-2 pt-2">
             <div className="flex items-center justify-between w-full max-w-8xl gap-6 p-4 md:p-3">
                 {/* Logo Section */}
                 <div className="flex items-center gap-3">
