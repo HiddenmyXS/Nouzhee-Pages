@@ -49,50 +49,50 @@ const MobileMenu: React.FC<{
                                 <X className="w-6 h-6" />
                             </button>
                         </div>
-                        <nav className="flex flex-col gap-2 p-4">
+                        <nav className="flex flex-col gap-2 p-4 text-gray-100">
                             <Link
                                 href="/home"
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                                className="flex items-center gap-2 py-2 hover:text-cyan-400 transition-colors"
                             >
                                 <Home className="w-5 h-5" />
-                                <span className="font-semibold">Home</span>
+                                <span>Home</span>
                             </Link>
 
                             <Link
                                 href="/community"
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                                className="flex items-center gap-2 py-2 hover:text-cyan-400 transition-colors"
                             >
                                 <RiUserCommunityFill className="w-5 h-5" />
-                                <span className="font-semibold">Community</span>
+                                <span>Community</span>
                             </Link>
 
                             <Link
                                 href="/events"
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                                className="flex items-center gap-2 py-2 hover:text-cyan-400 transition-colors"
                             >
                                 <Calendar className="w-5 h-5" />
-                                <span className="font-semibold">Event Calendar</span>
+                                <span>Event Calendar</span>
                             </Link>
 
                             <Link
                                 href="/gallery"
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                                className="flex items-center gap-2 py-2 hover:text-cyan-400 transition-colors"
                             >
                                 <GrGallery className="w-5 h-5" />
-                                <span className="font-semibold">Gallery</span>
+                                <span>Gallery</span>
                             </Link>
 
                             <Link
                                 href="/linkpage"
                                 onClick={onClose}
-                                className="flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors py-2"
+                                className="flex items-center gap-2 py-2 hover:text-cyan-400 transition-colors"
                             >
                                 <IoInformation className="w-5 h-5" />
-                                <span className="font-semibold">About Us</span>
+                                <span>About Us</span>
                             </Link>
                         </nav>
                     </div>
@@ -126,48 +126,48 @@ export default function Header(): React.ReactElement {
                     className="hidden md:flex items-center justify-end flex-1 gap-6 mr-8"
                     aria-label="Main navigation"
                 >
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-6 text-gray-100">
                         <Link
                             href="/home"
-                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                         >
                             <Home
-                                className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]"
+                                className="w-4 h-4"
                                 aria-hidden="true"
                             />
-                            <span className="font-semibold">Home</span>
+                            <span>Home</span>
                         </Link>
 
                         <Link
                             href="/community"
-                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                         >
-                            <RiUserCommunityLine className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
-                            <span className="font-semibold">Community</span>
+                            <RiUserCommunityLine className="w-4 h-4" aria-hidden="true" />
+                            <span>Community</span>
                         </Link>
 
                         <Link
                             href="/events"
-                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                         >
-                            <Calendar className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
-                            <span className="font-semibold">Event Calendar</span>
+                            <Calendar className="w-4 h-4" aria-hidden="true" />
+                            <span>Event Calendar</span>
                         </Link>
 
                         <Link
                             href="/gallery"
-                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                         >
-                            <GrGallery className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
-                            <span className="font-semibold">Gallery</span>
+                            <GrGallery className="w-4 h-4" aria-hidden="true" />
+                            <span>Gallery</span>
                         </Link>
 
                         <Link
                             href="/linkpage"
-                            className="group flex items-center gap-2 text-gray-300 hover:text-gray-50 transition-colors"
+                            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                         >
-                            <IoInformation className="w-4 h-4 transform transition-transform duration-200 group-hover:rotate-[10deg]" aria-hidden="true" />
-                            <span className="font-semibold">About Us</span>
+                            <IoInformation className="w-4 h-4" aria-hidden="true" />
+                            <span>About Us</span>
                         </Link>
                     </div>
                 </nav>

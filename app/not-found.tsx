@@ -1,89 +1,111 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import FuzzyText from '@/components/FuzzyText';
-import { Home } from 'lucide-react';
-import Header from './components/header';
-
-const Aurora = ({ colorStops = ["#24102F", "#4B1E6A", "#8C5CFF"], blend = 0.6, amplitude = 1.0, speed = 1.0 }) => {
-  const [c1, c2, c3] = colorStops;
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="aurora-layer" />
-      <style jsx>{`
-        .aurora-layer {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          background:
-            radial-gradient(ellipse at 40% 30%, ${c1} 0%, transparent 40%),
-            radial-gradient(ellipse at 75% 10%, ${c2} 0%, transparent 45%),
-            radial-gradient(ellipse at 20% 80%, ${c3} 0%, transparent 45%);
-          background-blend-mode: screen;
-          opacity: ${blend};
-          filter: blur(${60 * amplitude}px);
-          transform-origin: center;
-          animation: aurora ${20 / Math.max(speed, 0.001)}s ease-in-out infinite;
-        }
-
-        @keyframes aurora {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(${10 * amplitude}%, ${5 * amplitude}%) scale(${1 + 0.1 * amplitude}); }
-          50% { transform: translate(${-5 * amplitude}%, ${10 * amplitude}%) scale(${1 - 0.1 * amplitude}); }
-          75% { transform: translate(${5 * amplitude}%, ${-5 * amplitude}%) scale(${1 + 0.05 * amplitude}); }
-        }
-      `}</style>
-    </div>
-  );
-};
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { MoveLeft, Terminal, TriangleAlertIcon } from "lucide-react";
 
 export default function NotFound() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isBooted, setIsBooted] = useState(false);
 
   useEffect(() => {
-    const fadeInTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-
-    return () => clearTimeout(fadeInTimer);
+    // Simulasi waktu booting sistem
+    const timer = setTimeout(() => setIsBooted(true), 150);
+    return () => clearTimeout(timer);
   }, []);
 
+  // Animasi ala Data-Materialize (Cyberpunk style)
+  const cyberPop = (delay: string) => 
+    `transition-all duration-75 ${delay} ${
+      isBooted 
+      ? 'opacity-100 scale-100 blur-0' 
+      : 'opacity-0 scale-110 blur-sm'
+    }`;
+
   return (
-    <main className={`flex flex-col items-center justify-center bg-slate-900 w-full min-h-screen transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'} relative`}>
-    <link rel="icon" href="/logos.svg" sizes="any" />
-    <Header/>
-      <div className="w-full h-full absolute inset-0">
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+    <main className="relative w-full h-screen overflow-hidden bg-[#050505] flex flex-col items-center justify-center text-white font-sans">
+      
+      {/* --- 1. INTERACTIVE GRID BACKGROUND --- */}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${isBooted ? 'opacity-20' : 'opacity-0'}`}>
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #1f1f1f 1px, transparent 1px),
+              linear-gradient(to bottom, #1f1f1f 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            maskImage: 'radial-gradient(circle at center, black, transparent 80%)'
+          }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-4 py-12 text-center">
-        <div className="mb-8">
-          <FuzzyText
-            baseIntensity={0.2} 
-            hoverIntensity={0.23} 
-            enableHover={true}
-          >404</FuzzyText>
+      <style jsx>{`
+        @keyframes flicker {
+          0% { opacity: 0.8; }
+          5% { opacity: 0.4; }
+          10% { opacity: 0.9; }
+          100% { opacity: 1; }
+        }
+        .animate-flicker {
+          animation: flicker 0.2s ease-in-out;
+        }
+        .sketchy-shape {
+          border-radius: 2% 98% 1% 99% / 99% 2% 98% 1%;
+        }
+      `}</style>
+
+      {/* --- 2. CONTENT CONTAINER --- */}
+      <div className="relative z-10 flex flex-col items-center">
+
+        {/* DEBUG BOX - Sudden Pop */}
+        <div className={`relative group bottom-6 ${cyberPop('delay-[100ms]')} ${isBooted && 'animate-flicker'}`}>
+            <div className="absolute inset-0 bg-red-800 border border-cyan-500/20 translate-x-2 translate-y-2 transition-transform duration-300" />
+            <div className="relative px-8 py-4 bg-red-900 border border-white/20 flex items-center gap-3">
+                <TriangleAlertIcon size={18} className="text-red-100 animate-pulse" />
+                <span className="uppercase tracking-[0.2em] font-bold text-sm">Debug Error : 404 </span>
+            </div>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 max-w-2xl">
-          Not Found / Missing Page
-        </h1>
-        <p className='text-white font-semibold text-xl'>Ooops halaman yang anda cari tidak ditemukan.....</p>
-        <a
-          href="/"
-          role="button"
-          aria-label="View more details about The Fountaine Project Cosplay"
-          className="inline-flex items-center mt-5 px-4 py-2 gap-3 sm:px-6 sm:py-3 bg-transparent border-2 border-white text-white font-medium rounded-md transition-transform duration-200 transform hover:scale-105 hover:bg-white/10"
-        >
-          <Home size={20}/>
-          <span>Back to home</span>
-        </a>
         
+        {/* DOUBLE LAYERED 404 TEXT - Glitch-In Effect */}
+        <div className={`relative group mb-8 ${cyberPop('delay-[300ms]')}`}>
+            <span className="absolute inset-0 text-[10rem] sm:text-[14rem] font-black text-cyan-500/10 translate-x-3 translate-y-3 italic select-none">
+                404
+            </span>
+            <h1 className="relative text-[10rem] sm:text-[14rem] font-black leading-none tracking-tighter text-white drop-shadow-2xl italic select-none">
+                404
+            </h1>
+            <div className="absolute top-1/2 left-0 w-full h-[2px] bg-cyan-500/30 -rotate-2 blur-sm"></div>
+        </div>
+
+        {/* ERROR MESSAGE - Sudden Appearance */}
+        <div className={`flex flex-col items-center gap-2 mb-12 ${cyberPop('delay-[450ms]')}`}>
+            <div className="flex items-center gap-2 text-cyan-500 font-mono text-sm tracking-[0.3em] mb-2 uppercase">
+                <Terminal size={14} className="animate-pulse" />
+                <span>Error: Protocol_Not_Found</span>
+            </div>
+            <p className="text-gray-400 font-light text-center max-w-xs sm:max-w-md leading-relaxed">
+                The character or terminal path you are looking for has been <span className="text-white italic">de-materialized</span> or moved to another sector.
+            </p>
+        </div>
+
+        {/* --- 3. DOUBLE LAYERED SHADOW BUTTON --- */}
+        <Link href="/" className={`relative group ${cyberPop('delay-[600ms]')}`}>
+            <div className="absolute inset-0 bg-cyan-900/20 border border-cyan-500/20 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
+            <div className="relative px-8 py-4 bg-black border border-white/20 flex items-center gap-3 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-active:translate-x-0 group-active:translate-y-0">
+                <MoveLeft size={18} className="text-cyan-400 group-hover:-translate-x-1 transition-transform" />
+                <span className="uppercase tracking-[0.2em] font-bold text-sm">Return to Sector 01</span>
+            </div>
+        </Link>
+
       </div>
+
+      {/* FOOTER - Minimalist Status */}
+      <div className={`absolute bottom-8 text-[10px] font-mono text-gray-600 tracking-widest uppercase transition-all duration-75 delay-[800ms] ${isBooted ? 'opacity-50' : 'opacity-0'}`}>
+        Status: 404 // Nouzhee_System_Core
+      </div>
+
     </main>
   );
 }

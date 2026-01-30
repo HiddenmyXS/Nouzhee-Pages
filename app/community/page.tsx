@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import HeaderCommunity from "../components/header-community";
 import { useState, useEffect } from "react";
 
 export default function CommunityComponent() {
@@ -19,35 +18,35 @@ export default function CommunityComponent() {
 
   const slides = [
     {
-      image: "./picture/picture-1.jpg",
+      image: "/picture/picture-1.jpg",
       description: "Description for image 1."
     },
     {
-      image: "./picture/picture-2.JPG",
+      image: "/picture/picture-2.JPG",
       description: "Description for image 2."
     },
     {
-      image: "./picture/picture-3.jpg",
+      image: "/picture/picture-3.jpg",
       description: "Description for image 3."
     },
     {
-      image: "./picture/picture-4.jpg",
+      image: "/picture/picture-4.jpg",
       description: "Description for image 4."
     },
     {
-      image: "./picture/picture-5.png",
+      image: "/picture/picture-5.png",
       description: "Description for image 5."
     },
     {
-      image: "./picture/picture-6.png",
+      image: "/picture/picture-6.png",
       description: "Description for image 6."
     },
     {
-      image: "./picture/picture-7.JPG",
+      image: "/picture/picture-7.JPG",
       description: "Description for image 7."
     },
     {
-      image: "./picture/picture-8.jpg",
+      image: "/picture/picture-8.jpg",
       description: "Description for image 8."
     }
   ];
@@ -66,7 +65,6 @@ export default function CommunityComponent() {
     <main className={`flex flex-col items-center justify-center gap-6 w-full transition-opacity duration-1000 ease-in-out ${
       isVisible ? 'opacity-100' : 'opacity-0'
     }`}>
-      <HeaderCommunity />
       <div className="relative w-full h-screen overflow-hidden group">
         {slides.map((slide, index) => (
           <div
@@ -93,14 +91,6 @@ export default function CommunityComponent() {
                 <p className="text-sm sm:text-base md:text-lg text-white/90 mt-4">
                   Fontaine adalah salah satu dari tujuh wilayah utama di dunia Teyvat dalam game Genshin Impact buatan HoYoverse. Fontaine dikenal sebagai “Nation of Justice” atau Negeri Keadilan, dan dipimpin oleh Archon Hydro, yaitu Furina (Focalors).
                 </p>
-                {/*<a
-                  href="/community/genesis"
-                  role="button"
-                  aria-label="View more details about The Fountaine Project Cosplay"
-                  className="inline-block mt-5 px-4 py-2 sm:px-6 sm:py-3 bg-transparent border-2 border-white text-white font-medium rounded-md transition-transform duration-200 transform hover:scale-105 hover:bg-white/10"
-                >
-                  View More Details
-                </a>*/}
                 <p className="text-xs sm:text-sm md:text-lg text-white/90 mt-4">Project Photo Session 12 Oktober 2025</p>
               </div>
             </div>

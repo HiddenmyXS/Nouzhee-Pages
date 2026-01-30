@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Loading from "./components/loading";
+import Home from "@/app/home/page";
 
-export default function Home() {
+export default function DefaultPage() {
   return (
-    <Loading/>
+    <Home/>
   );
 }

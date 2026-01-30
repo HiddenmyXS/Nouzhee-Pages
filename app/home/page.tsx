@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "../components/header"
 import { useState, useEffect } from "react";
+import ClientWrapping from "@/components/ClientWrapping";
 import TextType from '@/components/TextType';
 import { Github } from "lucide-react";
 import { BsStackOverflow } from "react-icons/bs";
@@ -15,90 +15,104 @@ export default function HomeComponent() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const fadeInTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-
+    const fadeInTimer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(fadeInTimer);
-  
-  },[]);
-  
-return (
-    <main className={`flex flex-col items-center justify-center bg-accent-foreground w-full h-screen transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <Header />
-        <link rel="icon" href="/logos.svg" sizes="any" />
-          <div className="w-full h-screen relative overflow-hidden">
-             
-            <div className="absolute inset-0">
-              <img
-                src="./picture/master.jpg"
-                alt="Portfolio preview"
-                className="w-full h-full object-cover"
-              />
+  }, []);
+
+  return (
+    <main className={`relative w-full h-screen overflow-hidden bg-[#0a0a0a] transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <ClientWrapping>
+      <style jsx>{`
+        .bg-grain {
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .sketchy-border {
+          border-radius: 4% 95% 6% 95% / 95% 4% 92% 5%;
+        }
+      `}</style>
+
+
+      <div className="absolute inset-0 z-0">
+        <img
+          src="./20.jpg"
+          alt="Cosplay Portfolio"
+          className="w-full h-full object-cover object-center opacity-80"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-grain mix-blend-overlay pointer-events-none z-20" />
+      </div>
+
+      <div className="relative z-30 w-full h-full flex flex-col lg:flex-row">
+        
+        <div className="w-full lg:w-[42%] h-full relative flex flex-col justify-center px-10 lg:px-16">
+            
+            <div className="absolute inset-y-0 -left-10 w-[115%] bg-black/70 backdrop-blur-sm border-r border-white/5 transform -skew-x-6 origin-top shadow-2xl">
+              <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
             </div>
 
-            <div 
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(5, 5, 5, 0.75) 30%, rgba(10, 10, 10, 0.5) 55%, rgba(10, 10, 10, 0.35) 80%, rgba(10, 10, 10, 0) 100%)'
-              }}
-            />
+            <div className="absolute top-24 left-10 lg:left-16 z-20">
+                <span className="text-[20px] uppercase tracking-[0.5em] text-gray-400 font-mono opacity-60">
+                  // Portfolio_Systems.v2
+                </span>
+            </div>
 
-            <div className="relative z-10 w-full h-full flex items-center">
-              <div className="w-full max-w-7xl mx-auto px-8">
-                <div className="max-w-lg text-left">
-                  <TextType
-                    className="text-5xl sm:text-6xl font-bold text-white mb-4"
-                    text={["Hello!", "I`m Nouzhee", "Favorite Hobbies Cosplay and Programming", "See Ya!"]}
-                    typingSpeed={95}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|" 
-                  />
-                  <p className="text-lg sm:text-xl text-white mb-8">
-                    A Senior Programmer at Mobile Development with favorite hobbies cosplay and tech guy
-                  </p>
-                    <div className="relative inline-flex flex-wrap items-center justify-center gap-4">
-                    <a aria-label="GitHub" className="p-1">
-                      <Github className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
+            <div className="relative z-10">
+                <div className="mb-2">
+                    <TextType
+                        className="text-4xl sm:text-6xl font-black text-white leading-none mb-4"
+                        text={["Hello! _", "Im Nouzhee _", "Developer _", "Cosplayer _", "See Ya! _"]}
+                        typingSpeed={80}
+                        pauseDuration={2000}
+                        showCursor={true}
+                        cursorCharacter="|" 
+                    />
+                </div>
+                
+                <p className="text-md sm:text-base text-gray-300 max-w-md mb-8 font-light leading-relaxed border-l border-white/20 pl-4">
+                  Combining the precision of <span className="text-white">Mobile Development</span> with the creativity of <span className="text-cyan-400">Cosplay Art</span>.
+                </p>
 
-                    <a aria-label="Stack Overflow" className="p-1">
-                      <BsStackOverflow className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="Tux" className="p-1">
-                      <ImTux className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="Android Studio" className="p-1">
-                      <SiAndroidstudio className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="Flutter" className="p-1">
-                      <FaFlutter className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="Firebase (brand)" className="p-1">
-                      <TbBrandFirebase className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="SQLite" className="p-1">
-                      <SiSqlite className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="React" className="p-1">
-                      <GrReactjs className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
-
-                    <a aria-label="Laravel" className="p-1">
-                      <SiLaravel className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                    </a>
+                <div className="relative group max-w-[440px]"> 
+                  <div className="absolute inset-0 border border-white/5 bg-black/40 translate-x-3 translate-y-3 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
+                    <div className="relative bg-white/[0.03] border border-white/10 p-8 backdrop-blur-md shadow-2xl border-s-4 border-s-cyan-500/50 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                      <div className="flex items-center justify-between mb-6">
+                        <p className="text-[14px] uppercase tracking-[0.3em] text-cyan-400/100 font-extralight">
+                          Skill Experience
+                        </p>
+                        <div className="h-[1px] w-12 bg-white/10"/>
+                      </div>
+                      <div className="grid grid-cols-5 gap-y-6 gap-x-4">
+                        <IconMini icon={<Github />} label="Git" />
+                        <IconMini icon={<BsStackOverflow />} label="Stack" />
+                        <IconMini icon={<ImTux />} label="Linux" />
+                        <IconMini icon={<SiAndroidstudio />} label="AS" />
+                        <IconMini icon={<FaFlutter />} color="text-cyan-400" label="Flutter" />
+                        <IconMini icon={<TbBrandFirebase />} color="text-yellow-500" label="Firebase" />
+                        <IconMini icon={<GrReactjs />} color="text-blue-400" label="React" />
+                        <IconMini icon={<SiLaravel />} color="text-red-500" label="Laravel" />
+                        <IconMini icon={<SiSqlite />} label="SQL" />
+                      </div>
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-cyan-500/50"/>
                   </div>
                 </div>
-              </div>
             </div>
+        </div>
+        <div className="hidden lg:flex lg:w-[58%] h-full items-end justify-end p-12 pointer-events-none">
+            <div className="text-white/10 text-9xl font-black select-none rotate-90 translate-x-20">
+               // NOUZHEE
+            </div>
+        </div>
+
       </div>
+       </ClientWrapping>
     </main>
   );
+}
+
+function IconMini({ icon, color = "text-white" }) {
+    return (
+        <div className={`w-5 h-5 sm:w-6 sm:h-6 ${color} opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 flex items-center justify-center`}>
+            {icon}
+        </div>
+    )
 }

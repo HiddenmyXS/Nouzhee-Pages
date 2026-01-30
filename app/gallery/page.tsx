@@ -1,166 +1,128 @@
 "use client";
 
 import Image from "next/image";
-import Header from "@/app/components/header";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { useState, useEffect } from "react";
+import { Terminal, Camera, Cpu, Sparkles, X } from "lucide-react";
 
-export default function HomeComponent() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export default function GalleryComponent() {
   const [isVisible, setIsVisible] = useState(false);
   const [openImage, setOpenImage] = useState<string | null>(null);
 
   useEffect(() => {
-    const fadeInTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100); 
-
+    const fadeInTimer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(fadeInTimer);
   }, []);
 
-  const slides = [
-    {
-      image: "./galleries/gallery-1.JPG",
-      description: "Di mulai awal cosplayku pada tahun 2023. adalah momen yang tak terlupakan ketika aku mengenakan kostum pertamaku dan merasakan kegembiraan menjadi karakter favoritku. Perjalanan ini baru saja dimulai, dan aku sangat bersemangat untuk menjelajahi dunia cosplay lebih dalam lagi. Aku menjadi Wanderer alias Scaramouche dari game Genshin Impact yang sangat aku sukai. dari sinilah aku memulai perjalananku di dunia cosplay. mendapatkan banyak pengalaman berharga dan bertemu dengan banyak teman baru yang memiliki minat yang sama."
+  const timelineItems = [
+    { 
+      image: "/galleries/gallery-1.JPG", 
+      title: "Cosplay Start", 
+      desc: "Dimulai awal cosplayku pada tahun 2023. Perjalanan menjadi Wanderer (Scaramouche) yang tak terlupakan.", 
+      date: "NOV_2023", 
+      icon: <Cpu size={14} />, 
+      color: "border-cyan-500" 
     },
-    {
-      image: "./galleries/gallery-2.jpg",
-      description: "Pertama kali terjun dalam dunia cosplay cukup excited. Aku mengajak teman temanku untuk ikut kesana untuk meramaikan acara tersebut. Pada saat datang aku masih cukup bingung dan kurang begitu paham, apalagi aku baru pertama kali terjun ke dalam dunia cosplay yang begitu luas. disini aku mulai belajar, mencari pengalaman baru dan mencari teman baru yang memiliki pengalaman yang jauh lebih tinggi dibandingkan aku. disinilah aku bertemu pertama kali dengan teman yang positive vibes dan saling support bersama. hingga aku selalu hadir di event bersama teman teman sirkel ku."
+    { 
+      image: "/galleries/gallery-2.jpg", 
+      title: "First Meetup", 
+      desc: "Terjun ke dunia cosplay yang luas. Bertemu teman-teman positive vibes dan mulai membangun sirkel.", 
+      date: "JAN_2024", 
+      icon: <Sparkles size={14} />, 
+      color: "border-purple-500" 
     },
-    {
-      image: "./picture/master.jpg",
-      description: "Lagi malas ketik, nanti di update kok :)"
+    { 
+      image: "/picture/master.jpg", 
+      title: "Convention Era", 
+      desc: "Lagi malas ketik, nanti di update kok :)", 
+      date: "APR_2024", 
+      icon: <Camera size={14} />, 
+      color: "border-red-500" 
     },
-    {
-      image: "./picture/picture.jpg",
-      description: "nanti di update :)"
-    }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
   return (
-    <main className={`flex flex-col items-center justify-center gap-6 w-full transition-opacity duration-1000 ease-in-out ${
-      isVisible ? 'opacity-100' : 'opacity-0'
-    }`}>
-      <link rel="icon" href="/logos.svg" sizes="any" />
-      <Header/>
-      <div className="relative w-full h-66 flex items-center justify-center">
+    <main className={`min-h-screen bg-[#050505] text-white transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="relative w-full h-[40vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="./nav-community.JPG"
+          src="/nav-community.JPG"
           alt="Community background"
           fill
-          className="object-cover"
+          className="object-cover opacity-40 scale-110 blur-[2px]"
         />
         <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute -bottom-10 -left-10 w-[120%] h-32 bg-[#050505] transform -rotate-2 z-20" />
+        
         <div className="relative z-10 text-center px-6">
-          <TypingAnimation className="text-white text-2xl md:text-4xl font-semibold">
-        Gallery of Nouzhee
-          </TypingAnimation>
-          <p className="mt-3 text-white/90 max-w-2xl mx-auto">
-        Journey from cosplay 2023 to now
+          <div className="inline-block py-1 px-3 border border-cyan-500/30 rounded-full bg-cyan-900/20 text-cyan-400 text-[10px] font-mono tracking-[0.3em] mb-4">
+             // ARCHIVE_DATABASE
+          </div>
+            <div className="flex items-center justify-center mb-2">
+               <TypingAnimation className="text-white text-4xl md:text-6xl font-black tracking-tighter">
+                GALLERY_OF_NOUZHEE
+                </TypingAnimation>
+            </div>
+          <p className="mt-3 text-gray-400 font-mono text-xs tracking-widest uppercase">
+            &gt; Journey from cosplay 2023 to present_
           </p>
         </div>
       </div>
-      <div className="relative w-full h-screen overflow-hidden group">
-        <div className="w-full flex items-center justify-center py-12">
-          <div className="relative w-full max-w-5xl px-4">
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2" />
-        {[
-          { image: slides[0].image, title: "Cosplay Start", desc: slides[0].description, date: "November 2023", icon: "🎨", color: "bg-blue-600" },
-          { image: slides[1].image, title: "First Meetup", desc: slides[1].description, date: "January 2024", icon: "👥", color: "bg-purple-600" },
-          { image: slides[2].image, title: "Convention", desc: slides[2].description, date: "April 2024", icon: "🎪", color: "bg-pink-600" },
-          { image: slides[3].image, title: "Gallery Showcase", desc: slides[3].description, date: "August 2024", icon: "⭐", color: "bg-yellow-600" },
-        ].map((item, idx) => {
+      <div className="relative max-w-6xl mx-auto px-6 py-20">
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-500/50 via-white/10 to-transparent transform -translate-x-1/2 hidden md:block z-0" />
+
+        {timelineItems.map((item, idx) => {
           const isLeft = idx % 2 === 0;
           return (
-          <div key={idx} className="relative mb-12 md:mb-20">
-        <div className={`absolute left-1/2 -translate-x-1/2 top-6 md:top-10 w-4 h-4 rounded-full ${item.color} border-4 border-white z-10 flex items-center justify-center text-xs`}>
-          {item.icon}
-        </div>
-        <div className={`md:grid md:grid-cols-2 md:items-start gap-6 w-full ${isLeft ? "md:text-left" : "md:text-right"}`}>
-          <div className={`${isLeft ? "order-1" : "order-2 md:col-start-2"} md:pr-6 flex justify-center md:justify-end`}>
-            <button
-          type="button"
-          onClick={() => setOpenImage(item.image)}
-          aria-label={`Open ${item.title} image`}
-          className="relative w-full max-w-xs md:max-w-sm cursor-pointer rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110"
-            >
-          <div className="relative w-full aspect-video bg-gray-200">
-            <Image 
-              src={item.image} 
-              alt={item.title} 
-              fill 
-              className="object-cover transition-transform duration-300" 
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-          <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-gray-900/30 transition-opacity duration-300">
-            <div className="rounded-full p-3 items-center justify-center flex space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
-              </svg>
-              <p className="items-center justify-center text-white">Click to zoom</p>
+            <div key={idx} className={`relative flex flex-col md:flex-row items-center mb-32 ${isLeft ? "md:flex-row-reverse" : ""}`}>
+              <div className="w-full md:w-1/2 p-4 flex justify-center z-10">
+                <div className="relative group cursor-pointer" onClick={() => setOpenImage(item.image)}>
+                    <div className={`absolute inset-0 border ${item.color} bg-black/60 translate-x-3 translate-y-3 sketchy-shape z-0`} />
+                    <div className="relative w-[320px] h-[180px] overflow-hidden border border-white/10 bg-gray-900 sketchy-shape z-10">
+                        <Image src={item.image} alt={item.title} fill unoptimized className="object-cover opacity-80 group-hover:opacity-100" />
+                    </div>
+                </div>
+              </div>
+              <div className="absolute left-1/2 -translate-x-1/2 w-12 h-12 hidden md:flex items-center justify-center z-30">
+                <div className={`absolute inset-0 ${item.color.replace('border', 'bg')}/20 blur-xl rounded-full`} />
+                <div className={`relative w-10 h-10 border-2 ${item.color} bg-black rotate-45 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,1)]`}>
+                  <div className="-rotate-45 text-white drop-shadow-[0_0_5px_white]">
+                    {item.icon}
+                  </div>
+                </div>
+              </div>
+              <div className={`w-full md:w-1/2 p-4 z-10 ${isLeft ? "md:text-right" : "md:text-left"}`}>
+                <div className="relative">
+                    <span className="text-cyan-500 font-mono text-[10px] tracking-widest">{item.date}</span>
+                    <h3 className="text-2xl font-black italic text-white mb-2 uppercase">{item.title}</h3>
+                    <p className="text-gray-400 text-sm max-w-xs md:max-w-sm inline-block">{item.desc}</p>
+                </div>
+              </div>
+
             </div>
-          </div>
-            </button>
-          </div>
-          <div className={`${isLeft ? "order-2 md:col-start-2 md:pl-6" : "order-1 md:col-start-1 md:pl-6"} flex flex-col justify-center`}>
-            <h3 className="text-lg md:text-xl font-semibold text-gray-800">{item.title}</h3>
-            <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
-            <span className="mt-3 inline-block text-xs text-gray-500">{item.date}</span>
-          </div>
-        </div>
-          </div>
           );
         })}
-          </div>
-        </div>
       </div>
       {openImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-          onClick={() => setOpenImage(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image preview modal"
-        >
-          <div 
-        className="relative w-full max-w-4xl max-h-[90vh] flex items-center justify-center" 
-        onClick={(e) => e.stopPropagation()}
-          >
-        <button
-          type="button"
-          onClick={() => setOpenImage(null)}
-          className="absolute -top-10 -right-10 md:top-2 md:right-2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 z-20 transition-colors"
-          aria-label="Close image preview"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-800" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </button>
-        <div className="relative w-full h-auto">
-          <Image 
-            src={openImage} 
-            alt="Preview" 
-            width={1500}
-            height={1000}
-            className="w-full h-auto object-contain rounded-lg" 
-            priority
-          />
-        </div>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 transition-all animate-in fade-in duration-300" onClick={() => setOpenImage(null)}>
+          <div className="relative w-full max-w-5xl group" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="absolute -top-12 right-0 text-white/50 hover:text-red-500 flex items-center gap-2 transition-colors font-mono text-xs uppercase"
+              onClick={() => setOpenImage(null)}
+            >
+              Close_Terminal <X size={16} />
+            </button>
+            <div className="relative border border-white/20 p-1 bg-white/5">
+                <Image src={openImage} alt="Preview" width={1200} height={800} className="w-full h-auto object-contain" priority />
+                {/* Decorative corner borders */}
+                <div className="absolute-top-[1px] -left-[1px] w-8 h-8 border-t-2 border-l-2 border-cyan-500" />
+                <div className="absolute-bottom-[1px] -right-[1px] w-8 h-8 border-b-2 border-r-2 border-cyan-500" />
+            </div>
           </div>
         </div>
       )}
-    <script lang="ts">
-      {`/* This script block intentionally left blank; state/handlers are defined in component scope below. */`}
-    </script>
+      <div className="py-20 text-center opacity-20 pointer-events-none">
+          <span className="text-8xl font-black tracking-tighter">NOUZHEE_ARCHIVE</span>
+      </div>
     </main>
   );
 }
