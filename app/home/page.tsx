@@ -82,15 +82,15 @@ export default function HomeComponent() {
                         <div className="h-[1px] w-12 bg-white/10"/>
                       </div>
                       <div className="grid grid-cols-5 gap-y-6 gap-x-4">
-                        <IconMini icon={<Github />} label="Git" />
-                        <IconMini icon={<BsStackOverflow />} label="Stack" />
-                        <IconMini icon={<ImTux />} label="Linux" />
-                        <IconMini icon={<SiAndroidstudio />} label="AS" />
-                        <IconMini icon={<FaFlutter />} color="text-cyan-400" label="Flutter" />
-                        <IconMini icon={<TbBrandFirebase />} color="text-yellow-500" label="Firebase" />
-                        <IconMini icon={<GrReactjs />} color="text-blue-400" label="React" />
-                        <IconMini icon={<SiLaravel />} color="text-red-500" label="Laravel" />
-                        <IconMini icon={<SiSqlite />} label="SQL" />
+                        <IconMini icon={<Github />}/>
+                        <IconMini icon={<BsStackOverflow />}/>
+                        <IconMini icon={<ImTux />}/>
+                        <IconMini icon={<SiAndroidstudio />}/>
+                        <IconMini icon={<FaFlutter />} color="text-cyan-400"/>
+                        <IconMini icon={<TbBrandFirebase />} color="text-yellow-500"/>
+                        <IconMini icon={<GrReactjs />} color="text-blue-400"/>
+                        <IconMini icon={<SiLaravel />} color="text-red-500"/>
+                        <IconMini icon={<SiSqlite />}/>
                       </div>
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-cyan-500/50"/>
                   </div>
