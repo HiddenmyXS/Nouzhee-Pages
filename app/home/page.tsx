@@ -51,16 +51,14 @@ export default function HomeComponent() {
         <div className="absolute inset-0 bg-grain mix-blend-overlay pointer-events-none z-20" />
       </div>
 
-      <div className="relative z-30 w-full h-full flex flex-col lg:flex-row">
-        
-        <div className="w-full lg:w-[42%] h-full relative flex flex-col justify-center px-10 lg:px-16">
-            
-            <div className="absolute inset-y-0 -left-10 w-[115%] bg-black/70 backdrop-blur-sm border-r border-white/5 transform -skew-x-6 origin-top shadow-2xl">
-              <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
-            </div>
-
-            <div className="absolute top-24 left-10 lg:left-16 z-20">
-                <span className="text-[20px] uppercase tracking-[0.5em] text-gray-400 font-mono opacity-60">
+      <div className="relative z-30 w-full h-full flex flex-col lg:flex-row">       
+       <div className="w-full lg:w-[42%] h-full relative flex flex-col justify-center px-10 lg:px-16">    
+        <div className="absolute inset-y-0 -left-10 w-[115%] bg-black/70 backdrop-blur-sm border-r border-white/5 transform -skew-x-6 origin-top shadow-2xl">
+          <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
+        </div>
+        <div className="relative z-10 flex flex-col">
+            <div className="mb-4 lg:absolute lg:-top-16 lg:left-0">
+                <span className="text-[16px] lg:text-[20px] uppercase tracking-[0.5em] text-gray-400 font-mono opacity-60">
                   // Portfolio_Systems.v2
                 </span>
             </div>
@@ -184,6 +182,7 @@ export default function HomeComponent() {
                     <div className="absolute bottom-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-2 py-0.5 tracking-tighter uppercase italic translate-y-0 group-hover:-translate-y-1 transition-transform">
                       Unit_86_Online
                     </div>
+                  </div>
                   </div>
                 </div>          
             </div>
