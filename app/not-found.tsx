@@ -13,7 +13,6 @@ export default function NotFound() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Animasi ala Data-Materialize (Cyberpunk style)
   const cyberPop = (delay: string) => 
     `transition-all duration-75 ${delay} ${
       isBooted 
@@ -23,8 +22,6 @@ export default function NotFound() {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-[#050505] flex flex-col items-center justify-center text-white font-sans">
-      
-      {/* --- 1. INTERACTIVE GRID BACKGROUND --- */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${isBooted ? 'opacity-20' : 'opacity-0'}`}>
         <div 
           className="absolute inset-0"
@@ -56,10 +53,7 @@ export default function NotFound() {
         }
       `}</style>
 
-      {/* --- 2. CONTENT CONTAINER --- */}
       <div className="relative z-10 flex flex-col items-center">
-
-        {/* DEBUG BOX - Sudden Pop */}
         <div className={`relative group bottom-6 ${cyberPop('delay-[100ms]')} ${isBooted && 'animate-flicker'}`}>
             <div className="absolute inset-0 bg-red-800 border border-cyan-500/20 translate-x-2 translate-y-2 transition-transform duration-300" />
             <div className="relative px-8 py-4 bg-red-900 border border-white/20 flex items-center gap-3">
@@ -67,8 +61,7 @@ export default function NotFound() {
                 <span className="uppercase tracking-[0.2em] font-bold text-sm">Debug Error : 404 </span>
             </div>
         </div>
-        
-        {/* DOUBLE LAYERED 404 TEXT - Glitch-In Effect */}
+
         <div className={`relative group mb-8 ${cyberPop('delay-[300ms]')}`}>
             <span className="absolute inset-0 text-[10rem] sm:text-[14rem] font-black text-cyan-500/10 translate-x-3 translate-y-3 italic select-none">
                 404
@@ -79,7 +72,6 @@ export default function NotFound() {
             <div className="absolute top-1/2 left-0 w-full h-[2px] bg-cyan-500/30 -rotate-2 blur-sm"></div>
         </div>
 
-        {/* ERROR MESSAGE - Sudden Appearance */}
         <div className={`flex flex-col items-center gap-2 mb-12 ${cyberPop('delay-[450ms]')}`}>
             <div className="flex items-center gap-2 text-cyan-500 font-mono text-sm tracking-[0.3em] mb-2 uppercase">
                 <Terminal size={14} className="animate-pulse" />
@@ -90,7 +82,6 @@ export default function NotFound() {
             </p>
         </div>
 
-        {/* --- 3. DOUBLE LAYERED SHADOW BUTTON --- */}
         <Link href="/" className={`relative group ${cyberPop('delay-[600ms]')}`}>
             <div className="absolute inset-0 bg-cyan-900/20 border border-cyan-500/20 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
             <div className="relative px-8 py-4 bg-black border border-white/20 flex items-center gap-3 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-active:translate-x-0 group-active:translate-y-0">
@@ -101,7 +92,6 @@ export default function NotFound() {
 
       </div>
 
-      {/* FOOTER - Minimalist Status */}
       <div className={`absolute bottom-8 text-[12px] font-mono text-gray-300 tracking-widest uppercase transition-all duration-75 delay-[800ms] ${isBooted ? 'opacity-50' : 'opacity-0'}`}>
         Status: 404 // Nouzhee_System_Core
       </div>

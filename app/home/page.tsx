@@ -104,9 +104,7 @@ export default function HomeComponent() {
                 </div>
 
                 <div className="relative group max-w-[440px] top-5 font-mono"> 
-                  {/* Layer 1: Shadow Box (Tetap ada untuk kedalaman) */}
                   <div className="absolute inset-0 border border-white/5 bg-black/40 translate-x-3 translate-y-3 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />               
-                  {/* Layer 2: Hard-Terminal Container */}
                   <div className="relative bg-[#020202] border border-cyan-500/30 p-0 backdrop-blur-md shadow-2xl border-s-4 border-s-cyan-500/50 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1 overflow-hidden">
                     {/* Terminal Title Bar (Black Solid) */}
                     <div className="bg-cyan-500/10 border-b border-cyan-500/20 px-4 py-2 flex items-center justify-between">
@@ -119,8 +117,6 @@ export default function HomeComponent() {
                           root@nouzhee:~
                         </span>
                       </div>
-                      
-                      {/* Action Copy */}
                       <button 
                         onClick={handleCopy}
                         className="text-cyan-500/50 hover:text-cyan-400 transition-colors flex items-center gap-1.5"
@@ -133,13 +129,8 @@ export default function HomeComponent() {
                         <span className="text-[9px] uppercase font-bold">{copied ? 'Done' : 'Copy'}</span>
                       </button>
                     </div>
-
-                    {/* Terminal Body */}
                     <div className="p-6 space-y-4 relative bg-white/[0.03]">
-                      {/* Scanline Effect Overlay */}
                       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] z-10 bg-[length:100%_4px,3px_100%]" />
-
-                      {/* Lines of Code */}
                       <div className="relative z-0 space-y-1 text-sm">
                         <div className="flex gap-2">
                           <span className="text-cyan-500/50 underline">visitor</span>
@@ -161,8 +152,6 @@ export default function HomeComponent() {
                           <span className="text-white animate-pulse">_</span>
                         </div>
                       </div>
-
-                      {/* Skills Sub-Section (Mini Icons) */}
                       <div className="pt-4 border-t border-cyan-500/10">
                         <div className="flex items-center gap-2 mb-4">
                           <div className="w-1 h-1 bg-cyan-500" />
@@ -177,8 +166,6 @@ export default function HomeComponent() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Bottom Decorative Tag */}
                     <div className="absolute bottom-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-2 py-0.5 tracking-tighter uppercase italic translate-y-0 group-hover:-translate-y-1 transition-transform">
                       Unit_86_Online
                     </div>

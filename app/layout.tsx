@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const zector = localFont({
-  src: "./fonts/Zector.ttf", // Sesuaikan path-nya
+  src: "./fonts/Zector.ttf",
   variable: "--font-zector",
-  display: "swap", // Penting agar teks muncul dulu sebelum font loading selesai
+  display: "swap",
 });
 
 export const viewport: Viewport = {
