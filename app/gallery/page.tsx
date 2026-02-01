@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { useState, useEffect } from "react";
-import { Terminal, Camera, Cpu, Sparkles, X } from "lucide-react";
+import { Camera, Cpu, Sparkles, X } from "lucide-react";
 
 export default function GalleryComponent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,6 +43,7 @@ export default function GalleryComponent() {
 
   return (
     <main className={`min-h-screen bg-[#050505] text-white transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <link rel="icon" href="/logos.svg" sizes="any" />
       <div className="relative w-full h-[40vh] flex items-center justify-center overflow-hidden">
         <Image
           src="/nav-community.JPG"

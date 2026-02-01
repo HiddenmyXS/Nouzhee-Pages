@@ -30,6 +30,7 @@ export default function HomeComponent() {
 
   return (
     <main className={`relative w-full h-screen overflow-hidden`}>
+      <link rel="icon" href="/logos.svg" sizes="any" />
       <ClientWrapping>
       <style jsx>{`
         .bg-grain {

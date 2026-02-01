@@ -65,6 +65,7 @@ export default function CommunityComponent() {
     <main className={`flex flex-col items-center justify-center gap-6 w-full transition-opacity duration-1000 ease-in-out ${
       isVisible ? 'opacity-100' : 'opacity-0'
     }`}>
+      <link rel="icon" href="/logos.svg" sizes="any" />
       <div className="relative w-full h-screen overflow-hidden group">
         {slides.map((slide, index) => (
           <div

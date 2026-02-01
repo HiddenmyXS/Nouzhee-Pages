@@ -11,6 +11,11 @@ const zector = localFont({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: "Nouzhee Linktree",
+  description: "layout",
+};
+
 export const viewport: Viewport = {
   themeColor: "#0ea5e9",
   width: "device-width",
